@@ -38,7 +38,9 @@ public class ChatController {
 
     @MessageMapping("/chat/send")
     public void sendMessage(ChatMessageDTO messageDTO) {
+        // DB에 저장
         ChatMessageDTO saved = chatService.saveMessage(messageDTO);
+        // 채팅방 구독한 클라이언트에게 메시지 전송
         messagingTemplate.convertAndSend("/sub/chat/room/" + saved.getRoomId(), saved);
     }
 }

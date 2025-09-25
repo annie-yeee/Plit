@@ -17,14 +17,14 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String userId) throws UsernameNotFoundException {
-        // 1. userId로 UserEntity 찾기
+        // userId로 UserEntity 찾기
         UserEntity entity = userRepository.findByUserId(userId)
                 .orElseThrow(() -> new UsernameNotFoundException("사용자 없음: " + userId));
 
-        // 2. UserEntity → UserDTO
+        // UserEntity → UserDTO
         UserDTO userDTO = entity.toDTO();
 
-        // 3. CustomUserDetails로 래핑해서 반환
+        // CustomUserDetails로 래핑해서 반환
         return new CustomUserDetails(userDTO);
     }
 }

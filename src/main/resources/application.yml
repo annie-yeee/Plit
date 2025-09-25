@@ -1,10 +1,9 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/plit #로컬 데이터베이스
-#    url: jdbc:mysql://database-2.c3dpfr0cwcg9.sa-east-1.rds.amazonaws.com:3306/plit
-    username: plit
-    password: 123456   #로컬 데이터베이스 password
-#    password: aws123!!
+    url: ${DB_URL:jdbc:mysql://localhost:3306/plit?useSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true}
+    # url: jdbc:mysql://localhost:3306/plit #로컬 데이터베이스
+    username: ${DB_USERNAME:root} # 로컬 : root
+    password: ${DB_PASSWORD:root} # 로컬 : !123456
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   servlet:
@@ -28,8 +27,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: doormouse149@gmail.com
-    password: cgallkxwwlljtvsn
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
     properties:
       mail:
         smtp:
@@ -41,11 +40,11 @@ spring:
       client:
         registration:
           kakao:
-            client-id: 98c6ee570f82d3e4faafca490db81ca1
-            client-secret: f0JZ1EEs9gxNPYJkNE0DQiOCg3ibH6Nv
+            client-id: ${KAKAO_CLIENT_ID}
+            client-secret: ${KAKAO_CLIENT_SECRET}
             client-authentication-method: client_secret_post
             authorization-grant-type: authorization_code
-            redirect-uri: http://localhost:8080/login/oauth2/code/kakao
+            redirect-uri: ${APP_BASE_URL:http://localhost:8080}/login/oauth2/code/kakao
             scope:
               - profile_nickname
               - account_email
@@ -61,15 +60,15 @@ spring:
 logging:
   level:
     org.hibernate.SQL: debug
-    org.hibernate.type.descriptor.sql.BasicBinder: trace
+    org.hibernate.orm.jdbc.bind: trace
     org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
 
 riot:
   api:
-    key: RGAPI-2614a893-0fa2-48cd-975d-3810b82647c9
+    key: ${RIOT_API_KEY}
 
 # 파일 업로드 경로 설정
 custom:
   upload-path:
-    qna: ${user.dir}/upload/qna
-    clan: ${user.dir}/upload/clan
+    qna: ${UPLOAD_BASE_DIR:${user.dir}}/upload/qna
+    clan: ${UPLOAD_BASE_DIR:${user.dir}}/upload/clan
