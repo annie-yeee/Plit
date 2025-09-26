@@ -379,7 +379,8 @@ public class UserServiceImpl extends DefaultOAuth2UserService implements UserSer
             String nickname = (String) profile.get("nickname");
 
             if (email == null) {
-                throw new OAuth2AuthenticationException("카카오 계정에 이메일이 존재하지 않습니다.");
+                email = "kakao_" + attributes.get("id") + "@placeholder.local"; // 임시
+//                throw new OAuth2AuthenticationException("카카오 계정에 이메일이 존재하지 않습니다.");
             }
 
             processOAuthPostLogin(email, nickname);
