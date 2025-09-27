@@ -20,7 +20,7 @@ public class UserEntity {
     @Column(name = "user_seq", nullable = false)
     private Integer userSeq;
 
-    @Column(name = "user_id", nullable = false, unique = true, length = 30)
+    @Column(name = "user_id", nullable = false, unique = true, length = 191)
     private String userId;
 
     @Column(name = "user_pwd", nullable = false, length = 100)

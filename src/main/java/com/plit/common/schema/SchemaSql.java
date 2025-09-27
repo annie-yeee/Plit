@@ -89,7 +89,7 @@ public class SchemaSql {
     public static final String CREATE_USER_TABLE = """
         CREATE TABLE user (
             user_seq INT AUTO_INCREMENT PRIMARY KEY,
-            user_id VARCHAR(30) NOT NULL UNIQUE,
+            user_id VARCHAR(191) NOT NULL UNIQUE,
             user_pwd VARCHAR(100) NOT NULL,
             user_nickname VARCHAR(30) NOT NULL UNIQUE,
             use_yn CHAR(1) NOT NULL,
