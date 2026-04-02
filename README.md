@@ -40,12 +40,11 @@
   - 검색된 유저 데이터 DB 캐싱으로 재호출 최소화
   - 정적 리소스 S3/static 분리 및 CDN 적용
   - Riot 업데이트 시간대 피한 스케줄링 자동 갱신 설계
-
-### 🎨 프론트엔드
-- Thymeleaf 공통 레이아웃 및 화면 기본 구조 설계 참여
-
-### 📋 기획
-- 프로젝트 기획서 작성 참여
+- 전적 검색 페이지 Thymeleaf 화면 구현
+<img width="1901" height="789" alt="전적검색" src="https://github.com/user-attachments/assets/c4062d0c-5206-4cd6-b52a-395b80e1a421" />
+<img width="1206" height="793" alt="상세페이지" src="https://github.com/user-attachments/assets/e62d1298-c4e4-4de6-834d-61e4e8fc407d" />
+<img width="1596" height="711" alt="클랜멤버화면" src="https://github.com/user-attachments/assets/6c5d65c9-a8d3-4ea9-a49f-46dd6ed7095b" />
+<img width="763" height="573" alt="파티5vs5상세정보" src="https://github.com/user-attachments/assets/5752aae5-bf43-49b9-a0a5-7bd821b42f98" />
 
 ### 🚀 인프라 / 배포
 - AWS EC2 배포 참여
