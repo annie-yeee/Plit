@@ -46,7 +46,7 @@
 <img width="800" alt="전적검색" src="https://github.com/user-attachments/assets/c4062d0c-5206-4cd6-b52a-395b80e1a421" />
 
 **게임 상세 페이지**
-<img width="800" alt="상세페이지" src="https://github.com/user-attachments/assets/e62d1298-c4e4-4de6-834d-61e4e8fc407d" />
+<img width="604" height="603" alt="상세페이지자세히" src="https://github.com/user-attachments/assets/616ffdd9-c6b9-4731-bc7f-63102f1f3243" />
 
 ### 🚀 인프라 / 배포
 - AWS EC2 배포 참여
